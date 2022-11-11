@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evaluación final: Braking Bad</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./assets/images/favicon.jpeg" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+
+<body>
+  <main class="main">
+    <form class="main__form">
+      <label for="serie" class="form__label">Introduce aquí el personaje qu quieres buscar:</label>
+      <input type="text" id="serie" class="form__input js-input" placeholder="Ejemplo: Walter While">
+      <button class="button-search js-button-search">Buscar</button>
+
+    </form>
+
+    <div class="container js-container">
+      <section class="favourites-container js-favourites-container">
+        <h2 class="favourites-title js-favourites-title">Favorites</h2>
+        <div class="favourites__wrapper js-favourites-wrapper">
+        </div>
+      </section>
+      <section class="container_results js-results-container">
+        <h2 class="results__title js-results-title">Characters</h2>
+        <div class="results__wrapper js-results-wrapper"></div>
+      </section>
+    </div>
+  </main>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
