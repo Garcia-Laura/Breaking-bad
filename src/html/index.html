@@ -11,26 +11,10 @@
 </head>
 
 <body>
-  <main class="main">
-    <form class="main__form">
-      <label for="serie" class="form__label">Introduce aquí el personaje qu quieres buscar:</label>
-      <input type="text" id="serie" class="form__input js-input" placeholder="Ejemplo: Walter While">
-      <button class="button-search js-button-search">Buscar</button>
+  <include src="./partials/header.html"> </include>
+  <include src="./partials/main.html"> </include>
+  <include src="./partials/footer.html"> </include>
 
-    </form>
-
-    <div class="container js-container">
-      <section class="favourites-container js-favourites-container">
-        <h2 class="favourites-title js-favourites-title">Favorites</h2>
-        <div class="favourites__wrapper js-favourites-wrapper">
-        </div>
-      </section>
-      <section class="container_results js-results-container">
-        <h2 class="results__title js-results-title">Characters</h2>
-        <div class="results__wrapper js-results-wrapper"></div>
-      </section>
-    </div>
-  </main>
   <script src="./assets/js/main.js"></script>
 </body>
 
