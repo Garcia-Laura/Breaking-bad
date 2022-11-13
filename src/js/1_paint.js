@@ -5,7 +5,7 @@ function renderCharacters() {
 
   for (const characters of actors) {
     html += `<li>
-      <article class ="article js-articles" >
+      <article class ="article js-articles" id= "${characters.char_id}">
       <img class="img" src=${characters.img}>
       <h3 class = "name"> ${characters.name}</h3>
       <p class = "status">${characters.status}</p>
@@ -14,14 +14,7 @@ function renderCharacters() {
   }
 
   results.innerHTML = html;
-
-  const allArticles = document.querySelectorAll(".js-articles");
-  for (const eachArticles of allArticles) {
-    eachArticles.addEventListener("click", handleArticles);
-  }
-  function handleArticles(ev) {
-    console.log("cliiick");
-  }
+  addCharactersEvent();
 }
 
 fetch("https://breakingbadapi.com/api/characters")

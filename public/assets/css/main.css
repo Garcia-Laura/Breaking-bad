@@ -68,10 +68,12 @@
   justify-content: center;
   align-items: center;
   gap: 7px;
+  color: #135813;
   cursor: pointer; }
 
 .article.selected {
-  background-color: #71af71; }
+  background-color: #71af71;
+  color: white; }
 
 .img {
   height: 140px;
