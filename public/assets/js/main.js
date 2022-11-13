@@ -1,25 +1,25 @@
+
+
+
 "use strict";
 
-console.log(">> Ready :)");
-
 const input = document.querySelector(".js-input ");
-const bttnSearch = document.querySelector(".js-button-search");
+const btn = document.querySelector(".js-button-search");
 const favourites = document.querySelector(".js-favouritesList");
 const results = document.querySelector(".js-resultsList");
-
-console.log(1);
-
-console.log(2);
 let actors = [];
 
 function renderCharacters(actors) {
-  console.log("estoy pintando actores");
-
   let html = "";
 
-  for (const Characters of actors) {
-    html += `<li><article><div class="characters__img" style="background-image:url('${Characters.img}')"></div><h2>${Characters.name}</h2><h3>${Characters.status}</h3></article></li>`;
-    debugger;
+  for (const characters of actors) {
+    html += `<li>
+    <article class ="article" >
+    <img class="img" src=${characters.img}>
+    <h3 class = "name"> ${characters.name}</h3>
+    <p class = "status">${characters.status}</p>
+    </article>
+    </li>;`;
   }
 
   results.innerHTML = html;
@@ -32,5 +32,21 @@ fetch("https://breakingbadapi.com/api/characters")
     actors = dataResult;
     renderCharacters(actors);
   });
+
+function handleClickSearch(ev) {
+  ev.preventDefault();
+
+  const searchValue = input.value;
+
+  fetch(`https://breakingbadapi.com/api/characters?name=${searchValue}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      actors = data;
+      renderCharacters(actors);
+    });
+}
+
+btn.addEventListener("click", handleClickSearch);
 
 //# sourceMappingURL=main.js.map
