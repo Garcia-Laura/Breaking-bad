@@ -49,7 +49,7 @@ function renderFavourites() {
         <h3 class = "name"> ${characters.name}</h3>
         <p class = "status">${characters.status}</p>
         </article>
-        </li>;`;
+        </li>`;
   }
 
   favourites.innerHTML = html;
