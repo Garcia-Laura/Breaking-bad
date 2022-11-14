@@ -31,7 +31,6 @@ function renderCharacters() {
 fetch("https://breakingbadapi.com/api/characters")
   .then((response) => response.json())
   .then((dataResult) => {
-    console.log(dataResult);
     actors = dataResult;
     renderCharacters();
   });

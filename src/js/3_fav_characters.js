@@ -9,7 +9,6 @@ function addCharactersEvent() {
     eachArticles.addEventListener("click", handleArticles);
   }
   function handleArticles(ev) {
-    console.log("hola");
     ev.currentTarget.classList.toggle("selected");
 
     const selectFav = actors.find(
@@ -45,9 +44,10 @@ function renderFavourites() {
   for (const characters of favouriteCharacters) {
     html += `<li>
         <article class ="article-fav js-articles" id= "${characters.char_id}">
+        <i class="js-bDelete fa-solid fa-xmark card__icon"> </i>
         <img class="img-fav" src=${characters.img}>
-        <h3 class = "name"> ${characters.name}</h3>
-        <p class = "status">${characters.status}</p>
+        <h3 class = "name-fav"> ${characters.name}</h3>
+        <p class = "status-fav">${characters.status}</p>
         </article>
         </li>`;
   }

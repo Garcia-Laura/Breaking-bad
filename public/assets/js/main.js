@@ -42,7 +42,6 @@ function renderCharacters() {
 fetch("https://breakingbadapi.com/api/characters")
   .then((response) => response.json())
   .then((dataResult) => {
-    console.log(dataResult);
     actors = dataResult;
     renderCharacters();
   });
@@ -60,7 +59,6 @@ function handleClickSearch(ev) {
   fetch(`https://breakingbadapi.com/api/characters?name=${searchValue}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       actors = data;
       renderCharacters(actors);
     });
@@ -79,7 +77,6 @@ function addCharactersEvent() {
     eachArticles.addEventListener("click", handleArticles);
   }
   function handleArticles(ev) {
-    console.log("hola");
     ev.currentTarget.classList.toggle("selected");
 
     const selectFav = actors.find(
@@ -115,9 +112,10 @@ function renderFavourites() {
   for (const characters of favouriteCharacters) {
     html += `<li>
         <article class ="article-fav js-articles" id= "${characters.char_id}">
+        <i class="js-bDelete fa-solid fa-xmark card__icon"> </i>
         <img class="img-fav" src=${characters.img}>
-        <h3 class = "name"> ${characters.name}</h3>
-        <p class = "status">${characters.status}</p>
+        <h3 class = "name-fav"> ${characters.name}</h3>
+        <p class = "status-fav">${characters.status}</p>
         </article>
         </li>`;
   }
@@ -127,8 +125,6 @@ function renderFavourites() {
 
 // Añado setItem a la condicional de favoritos y luego creo una nueva variable para recuperarlas y que se queden pintadas.al final de la pag
 const savedFavourites = JSON.parse(localStorage.getItem("favourites"));
-console.log(localStorage);
-console.log(savedFavourites);
 
 // Te tengo que crear una condicional porque sino me da error. Me dice que esos valores son nulos, por lo tanto creo una condicional donde digo que si es diferente de null me los pinte
 
@@ -138,5 +134,31 @@ if (savedFavourites !== null) {
 }
 
 // La condicional para que los actores fav se mantengan con el selectd se encuentran dentro de la funcion render de fav, que es quien la pinta
+
+// creo la etqieuta enel HTML
+// hago un q.al
+// hago un bucle
+// y pongo condición.
+// Si pincho me lo quitas.
+
+let iconsX = [];
+
+function addIconsEvent() {
+  const icons = document.querySelectorAll(".js-bDelete");
+  for (const eachIcons of icons) {
+    eachIcons.addEventListener("click", handleIcons);
+  }
+}
+function handleIcons(ev) {
+  console.log("click");
+  const deleteFav = favouriteCharacters.findIndex(
+    (eachCharactersObj) =>
+      eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
+  );
+  favouriteCharacters.splice(deleteFav, 1);
+  localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
+  renderFavourites();
+}
+
 
 //# sourceMappingURL=main.js.map

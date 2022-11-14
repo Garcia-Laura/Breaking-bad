@@ -91,3 +91,16 @@
   height: 140px;
   width: 120px;
 }
+.reset {
+  position: relative;
+  bottom: 10px;
+  left: 15px;
+  border-radius: 20px;
+  width: 100px;
+  height: 25px;
+  background-color: rgb(113, 175, 113);
+  color: white;
+  font-weight: bold;
+  border: solid rgb(19, 88, 19);
+  cursor: pointer;
+}

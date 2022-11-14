@@ -11,7 +11,6 @@ function handleClickSearch(ev) {
   fetch(`https://breakingbadapi.com/api/characters?name=${searchValue}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       actors = data;
       renderCharacters(actors);
     });

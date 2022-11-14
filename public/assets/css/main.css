@@ -112,4 +112,17 @@
   height: 140px;
   width: 120px; }
 
+.reset {
+  position: relative;
+  bottom: 10px;
+  left: 15px;
+  border-radius: 20px;
+  width: 100px;
+  height: 25px;
+  background-color: #71af71;
+  color: white;
+  font-weight: bold;
+  border: solid #135813;
+  cursor: pointer; }
+
 /*# sourceMappingURL=main.css.map */
