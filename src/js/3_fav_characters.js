@@ -24,9 +24,12 @@ function addCharactersEvent() {
 
     if (oneFavouriteIndex === -1) {
       favouriteCharacters.push(selectFav);
+      localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
+
       // (-1 porque no existe y por lo tanto como no existe me lo pinta)
     } else {
       favouriteCharacters.splice(oneFavouriteIndex, 1);
+      localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
       // oneFavouriteIndex nos dice el indexedDB, en que posición está el objeto, y solo queremos quitar uno
     }
 

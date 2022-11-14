@@ -6,7 +6,7 @@
 function handleClickSearch(ev) {
   ev.preventDefault();
 
-  const searchValue = input.value;
+  const searchValue = input.value.toLowerCase();
 
   fetch(`https://breakingbadapi.com/api/characters?name=${searchValue}`)
     .then((response) => response.json())
