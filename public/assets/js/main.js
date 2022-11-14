@@ -25,8 +25,9 @@ function renderCharacters() {
     } else {
       classFav = "selected";
     }
+
     html += `<li>
-      <article class =" ${classFav}article js-articles" id= "${characters.char_id}">
+      <article class ="${classFav} article js-articles" id= "${characters.char_id}">
       <img class="img" src=${characters.img}>
       <h3 class = "name"> ${characters.name}</h3>
       <p class = "status">${characters.status}</p>
@@ -125,8 +126,9 @@ function renderFavourites() {
 }
 
 // Añado setItem a la condicional de favoritos y luego creo una nueva variable para recuperarlas y que se queden pintadas.al final de la pag
-
 const savedFavourites = JSON.parse(localStorage.getItem("favourites"));
+console.log(localStorage);
+console.log(savedFavourites);
 
 // Te tengo que crear una condicional porque sino me da error. Me dice que esos valores son nulos, por lo tanto creo una condicional donde digo que si es diferente de null me los pinte
 
