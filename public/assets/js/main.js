@@ -36,7 +36,10 @@ fetch("https://breakingbadapi.com/api/characters")
     renderCharacters();
   });
 
-// Evento y función manejadora para buscar personajes. La petición de búsqueda se ha hecho con petición al servidor. Mirar TolowerCase
+// Evento y función manejadora para buscar personajes.
+//  La petición de búsqueda se ha hecho con petición al servidor. Mirar TolowerCase
+// La petición se solicita dentro de la función porque queremos que nos busque el personaje
+// cuando hagamos click
 
 function handleClickSearch(ev) {
   ev.preventDefault();
@@ -55,37 +58,50 @@ function handleClickSearch(ev) {
 btn.addEventListener("click", handleClickSearch);
 
 "use strict";
+// Seleccionar personaje favorito.
+// Con esta función añado el evento a cada personaje.
+// La ejecuto aquí pero la llamo 1_paint para que me pinte a los personajes
+
 function addCharactersEvent() {
   const allArticles = document.querySelectorAll(".js-articles");
   for (const eachArticles of allArticles) {
     eachArticles.addEventListener("click", handleArticles);
   }
   function handleArticles(ev) {
+    console.log("hola");
     ev.currentTarget.classList.toggle("selected");
+
     const selectFav = actors.find(
       (eachCharactersObj) =>
         eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
     );
 
-    const OneFavourite = favouriteCharacters.find(
+    const oneFavouriteIndex = favouriteCharacters.findIndex(
       (eachCharactersObj) =>
         eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
     );
 
-    if (!OneFavourite) {
+    if (oneFavouriteIndex === -1) {
       favouriteCharacters.push(selectFav);
+      // (-1 porque no existe y por lo tanto como no existe me lo pinta)
+    } else {
+      favouriteCharacters.splice(oneFavouriteIndex, 1);
+      // oneFavouriteIndex nos dice el indexedDB, en que posición está el objeto, y solo queremos quitar uno
     }
 
     renderFavourites();
   }
 }
+
+// funcion para pintar los personajes favoritos.
+// Se desarrolla aqui pero la llamamos en la funcion manejadora
 function renderFavourites() {
   let html = "";
 
   for (const characters of favouriteCharacters) {
     html += `<li>
-        <article class ="article js-articles" id= "${characters.char_id}">
-        <img class="img" src=${characters.img}>
+        <article class ="article-fav js-articles" id= "${characters.char_id}">
+        <img class="img-fav" src=${characters.img}>
         <h3 class = "name"> ${characters.name}</h3>
         <p class = "status">${characters.status}</p>
         </article>
