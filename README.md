@@ -1,7 +1,7 @@
 ![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
 
 # Evaluación final módulo II. Laura García Cuello.
-#Breaking Bad.
+**Breaking Bad.**
 
 ¡Hola! Este es miprueba final del módulo II, creado con  Starter Kit. ¿Y qué es un Starter kit? Pues es una **plantilla de proyecto con funcionalidades preinstaladas y preconfiguradas**.
 Está compuesto por HTML, el  preprocesador SASS y Java Script.
