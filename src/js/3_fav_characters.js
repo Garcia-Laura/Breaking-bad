@@ -10,7 +10,6 @@ function addCharactersEvent() {
   }
   function handleArticles(ev) {
     ev.currentTarget.classList.toggle("selected");
-    console.log("no será que....");
 
     const selectFav = actors.find(
       (eachCharactersObj) =>

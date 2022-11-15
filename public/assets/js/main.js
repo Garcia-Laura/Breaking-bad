@@ -81,7 +81,6 @@ function addCharactersEvent() {
   }
   function handleArticles(ev) {
     ev.currentTarget.classList.toggle("selected");
-    console.log("no será que....");
 
     const selectFav = actors.find(
       (eachCharactersObj) =>
@@ -154,14 +153,12 @@ function addIconsEvent() {
   }
 }
 function handleIcons(ev) {
-  console.log("aspita");
   const deleteFav = favouriteCharacters.findIndex(
     (eachCharactersObj) =>
       eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
   );
-  console.log(favouriteCharacters);
+
   favouriteCharacters.splice(deleteFav, 1);
-  console.log("second", favouriteCharacters);
 
   localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
   renderFavourites();
