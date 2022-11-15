@@ -32,5 +32,7 @@ fetch("https://breakingbadapi.com/api/characters")
   .then((response) => response.json())
   .then((dataResult) => {
     actors = dataResult;
+    getFavFromLocal();
+    renderFavourites();
     renderCharacters();
   });

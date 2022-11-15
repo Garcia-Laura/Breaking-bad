@@ -6,6 +6,6 @@ const favourites = document.querySelector(".js-favouritesList");
 const results = document.querySelector(".js-resultsList");
 const reset = document.querySelector(".js-reset");
 
-// Variables globales(Vatiables con datos de la app, array de objetos)
+// Variables globales(Variables con datos de la app, array de objetos)
 let actors = [];
 let favouriteCharacters = [];

@@ -6,7 +6,7 @@ const favourites = document.querySelector(".js-favouritesList");
 const results = document.querySelector(".js-resultsList");
 const reset = document.querySelector(".js-reset");
 
-// Variables globales(Vatiables con datos de la app, array de objetos)
+// Variables globales(Variables con datos de la app, array de objetos)
 let actors = [];
 let favouriteCharacters = [];
 
@@ -44,6 +44,8 @@ fetch("https://breakingbadapi.com/api/characters")
   .then((response) => response.json())
   .then((dataResult) => {
     actors = dataResult;
+    getFavFromLocal();
+    renderFavourites();
     renderCharacters();
   });
 
@@ -127,13 +129,14 @@ function renderFavourites() {
 }
 
 // Añado setItem a la condicional de favoritos y luego creo una nueva variable para recuperarlas y que se queden pintadas.al final de la pag
-const savedFavourites = JSON.parse(localStorage.getItem("favourites"));
 
 // Te tengo que crear una condicional porque sino me da error. Me dice que esos valores son nulos, por lo tanto creo una condicional donde digo que si es diferente de null me los pinte
-
-if (savedFavourites !== null) {
-  favouriteCharacters = savedFavourites;
-  renderFavourites();
+function getFavFromLocal() {
+  const savedFavourites = JSON.parse(localStorage.getItem("favourites"));
+  if (savedFavourites !== null) {
+    favouriteCharacters = savedFavourites;
+    renderFavourites();
+  }
 }
 
 // La condicional para que los actores fav se mantengan con el selectd se encuentran dentro de la funcion render de fav, que es quien la pinta
@@ -150,28 +153,25 @@ function addIconsEvent() {
   }
 }
 function handleIcons(ev) {
-  console.log("click");
   const deleteFav = favouriteCharacters.findIndex(
     (eachCharactersObj) =>
       eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
   );
+  console.log(favouriteCharacters);
   favouriteCharacters.splice(deleteFav, 1);
+  console.log("second", favouriteCharacters);
+
   localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
   renderFavourites();
   renderCharacters();
 }
 
 function handleReset() {
-  //   console.log("click reset");
-  //   for (let i = 0; i < 20; i++) {
-  //     html += "";
   favouriteCharacters = [];
   renderFavourites();
   renderCharacters();
   localStorage.removeItem("favourites");
 }
-//   favourites.innerHTML = html;
-// }
 
 reset.addEventListener("click", handleReset);
 
