@@ -1,6 +1,7 @@
 ![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
 
-# Evaluación final módulo II: Breaking Bad.
+# Evaluación final módulo II. Laura García Cuello.
+**Breaking Bad.**
 
 ¡Hola! Este es miprueba final del módulo II, creado con  Starter Kit. ¿Y qué es un Starter kit? Pues es una **plantilla de proyecto con funcionalidades preinstaladas y preconfiguradas**.
 Está compuesto por HTML, el  preprocesador SASS y Java Script.
@@ -19,8 +20,8 @@ En este proyecto hay 3 tipos de ficheros y carpetas:
  - Ejecutamos el comando npm install y posteriormente npm start para visualizarlo en web.
 
 
-La finalidad de este proyecto consiste en:
-- Estructura de HTML.
+La **finalidad** de este proyecto consiste en:
+- Estructurar el HTML.
 - Desarrollar habilidades  y lógica de JS.
 - Realizar peticiones a un servidor.
 - Maquetación en SASS.
