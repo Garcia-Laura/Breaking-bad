@@ -1,10 +1,7 @@
-// creo la etqieuta enel HTML
-// hago un q.al
-// hago un bucle
-// y pongo condición.
-// Si pincho me lo quitas.
-
-let iconsX = [];
+// Creo un evento para todos lo iconos
+// hago la función manejadora y dentro un bucle
+// comparo el id de cual quito y donde pincho
+// y mando pintar
 
 function addIconsEvent() {
   const icons = document.querySelectorAll(".js-bDelete");

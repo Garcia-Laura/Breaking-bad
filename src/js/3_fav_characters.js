@@ -30,7 +30,7 @@ function addCharactersEvent() {
 
       // oneFavouriteIndex nos dice el indexedDB, en que posición está el objeto, y solo queremos quitar uno
     }
-    debugger;
+
     localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
 
     renderFavourites();

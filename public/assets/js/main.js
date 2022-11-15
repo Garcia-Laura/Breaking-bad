@@ -99,7 +99,7 @@ function addCharactersEvent() {
 
       // oneFavouriteIndex nos dice el indexedDB, en que posición está el objeto, y solo queremos quitar uno
     }
-    debugger;
+
     localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
 
     renderFavourites();
@@ -138,13 +138,10 @@ if (savedFavourites !== null) {
 
 // La condicional para que los actores fav se mantengan con el selectd se encuentran dentro de la funcion render de fav, que es quien la pinta
 
-// creo la etqieuta enel HTML
-// hago un q.al
-// hago un bucle
-// y pongo condición.
-// Si pincho me lo quitas.
-
-let iconsX = [];
+// Creo un evento para todos lo iconos
+// hago la función manejadora y dentro un bucle
+// comparo el id de cual quito y donde pincho
+// y mando pintar
 
 function addIconsEvent() {
   const icons = document.querySelectorAll(".js-bDelete");
@@ -164,17 +161,18 @@ function handleIcons(ev) {
   renderCharacters();
 }
 
-// function reset() {}
-
-// handleReset (){
-//     let favouriteCharacters = [];
-//     for (const characters of favouriteCharacters) {
-//         html += "";
-
-//     }
-//     favourites.innerHTML = html;
-
+function handleReset() {
+  //   console.log("click reset");
+  //   for (let i = 0; i < 20; i++) {
+  //     html += "";
+  favouriteCharacters = [];
+  renderFavourites();
+  renderCharacters();
+  localStorage.removeItem("favourites");
+}
+//   favourites.innerHTML = html;
 // }
-// reset.addEventListener("click", handleReset);
+
+reset.addEventListener("click", handleReset);
 
 //# sourceMappingURL=main.js.map
