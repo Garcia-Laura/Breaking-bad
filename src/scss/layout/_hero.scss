@@ -1,9 +1,12 @@
 .header {
   background-image: url(../images/header.jpg);
   background-position: center;
-  background-size: 100vh;
+  background-size: cover;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 340px;
+  @media (min-width: 768px) {
+    background-size: 100vh;
+  }
 }
