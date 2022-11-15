@@ -23,14 +23,15 @@ function addCharactersEvent() {
 
     if (oneFavouriteIndex === -1) {
       favouriteCharacters.push(selectFav);
-      localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
 
       // (-1 porque no existe y por lo tanto como no existe me lo pinta)
     } else {
       favouriteCharacters.splice(oneFavouriteIndex, 1);
-      localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
+
       // oneFavouriteIndex nos dice el indexedDB, en que posición está el objeto, y solo queremos quitar uno
     }
+    debugger;
+    localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
 
     renderFavourites();
   }
@@ -43,8 +44,8 @@ function renderFavourites() {
 
   for (const characters of favouriteCharacters) {
     html += `<li>
-        <article class ="article-fav js-articles" id= "${characters.char_id}">
-        <i class="js-bDelete fa-solid fa-xmark card__icon"> </i>
+        <article class ="article-fav js-articles" >
+        <i class="js-bDelete fa-solid fa-xmark card__icon" id= "${characters.char_id}"> </i>
         <img class="img-fav" src=${characters.img}>
         <h3 class = "name-fav"> ${characters.name}</h3>
         <p class = "status-fav">${characters.status}</p>
@@ -53,4 +54,5 @@ function renderFavourites() {
   }
 
   favourites.innerHTML = html;
+  addIconsEvent();
 }

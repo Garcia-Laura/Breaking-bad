@@ -21,4 +21,5 @@ function handleIcons(ev) {
   favouriteCharacters.splice(deleteFav, 1);
   localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
   renderFavourites();
+  renderCharacters();
 }
