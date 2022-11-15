@@ -10,6 +10,7 @@ function addIconsEvent() {
   }
 }
 function handleIcons(ev) {
+  console.log("aspita");
   const deleteFav = favouriteCharacters.findIndex(
     (eachCharactersObj) =>
       eachCharactersObj.char_id === parseInt(ev.currentTarget.id)

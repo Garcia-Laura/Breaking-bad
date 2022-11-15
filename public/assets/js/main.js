@@ -81,6 +81,7 @@ function addCharactersEvent() {
   }
   function handleArticles(ev) {
     ev.currentTarget.classList.toggle("selected");
+    console.log("no será que....");
 
     const selectFav = actors.find(
       (eachCharactersObj) =>
@@ -115,7 +116,7 @@ function renderFavourites() {
 
   for (const characters of favouriteCharacters) {
     html += `<li>
-        <article class ="article-fav js-articles" >
+        <article class ="article-fav js-articlesFav" >
         <i class="js-bDelete fa-solid fa-xmark card__icon" id= "${characters.char_id}"> </i>
         <img class="img-fav" src=${characters.img}>
         <h3 class = "name-fav"> ${characters.name}</h3>
@@ -153,6 +154,7 @@ function addIconsEvent() {
   }
 }
 function handleIcons(ev) {
+  console.log("aspita");
   const deleteFav = favouriteCharacters.findIndex(
     (eachCharactersObj) =>
       eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
