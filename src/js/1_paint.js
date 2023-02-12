@@ -28,7 +28,7 @@ function renderCharacters() {
   addCharactersEvent();
 }
 
-fetch("https://breakingbadapi.com/api/characters")
+fetch("./assets/data/characters.json")
   .then((response) => response.json())
   .then((dataResult) => {
     actors = dataResult;

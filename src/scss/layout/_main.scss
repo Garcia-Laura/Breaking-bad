@@ -1,3 +1,6 @@
+body{
+  background-color: rgb(241, 235, 229);
+}
 .main_form {
   margin-top: 25px;
   gap: 30px;
@@ -7,6 +10,7 @@
   gap: 20px;
   box-sizing: border-box;
   line-height: 1.1;
+ 
 }
 .form__label {
   text-align: center;
