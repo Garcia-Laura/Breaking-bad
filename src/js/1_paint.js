@@ -1,24 +1,35 @@
 // Petición al servidor con fetch y función para pintar los personajes en la web
 
-function renderCharacters() {
+function renderCharacters (charractersFiltered) {
   let html = "";
   let classFav = "";
+  let actorsToPaint = charractersFiltered === undefined ? actors : charractersFiltered;
+   console.log(actors)
+ 
+console.log(charractersFiltered)
 
-  for (const characters of actors) {
+  // if (charractersFiltered !== undefined){
+  //   actorsToPaint = charractersFiltered;
+  // }
+
+  for (const characters of actorsToPaint) {
     const oneFavouriteIndex = favouriteCharacters.findIndex(
       (eachCharactersObj) =>
         eachCharactersObj.char_id === parseInt(characters.char_id)
     );
-    if (oneFavouriteIndex === -1) {
-      classFav = "";
-    } else {
-      classFav = "selected";
-    }
+    
+    classFav = oneFavouriteIndex === -1 ? "" : "selected"
+    // if (oneFavouriteIndex === -1) {
+    //   classFav = "";
+    // } else {
+    //   classFav = "selected";
+    // }
 
     html += `<li>
-      <article class ="${classFav} article js-articles" id= "${characters.char_id}">
-      <img class="img" src=${characters.img}>
-      <h3 class = "name"> ${characters.name}</h3>
+    
+      <article class ="${classFav} article js-articles" id= "${characters.char_id}" >
+      <img class="img" src=${characters.img} >
+      <h3 class = "name"> ${characters.name} </h3>
       <p class = "status">${characters.status}</p>
       </article>
       </li>`;

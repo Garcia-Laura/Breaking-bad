@@ -45,8 +45,13 @@ body{
   color: $brown;
   font-weight: bold;
   border: 2px solid $brown;
-  
+  @media (min-width: 768px) {
+    margin-left: 5px;
+  margin-top: 0px;
+  }
 }
+  
+
 .button {
   cursor: pointer;
   border-radius: 50px;
@@ -54,7 +59,35 @@ body{
   background-color: $brown;
   color: $white;
   font-weight: bold;
+  @media (min-width: 768px) {
+    height: 30px;
+    width: 120px;
+  }
 }
+
+// button ::before,
+// button::after {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+//   height: 0;
+//   background-color: rgb(19, 88, 19);
+//   z-index: -z;
+//   transition: all 0.8s;
+
+
+// }
+
+// button ::before,
+// button::after {
+//   height: 100%;
+// }
+
+// button :hover{
+//  color: rgb(19, 88, 19);
+// }
 
 .container {
   display: flex;
@@ -85,17 +118,17 @@ body{
   cursor: pointer;
 }
 .article.selected {
-  background-color: rgb(113, 175, 113);
+  background-color: $greenDark;
   color: $white;
-  border: solid 1px $greenDark;
+  border: solid 3px ;
   border-radius: 15px;
 }
 .article-fav {
-  border: solid 1px $greenDark;
-  background-color: $greenLight;
+  border: solid 3px ;
+  background-color: $greenDark;
   color: $white;
   border-radius: 15px;
-  box-shadow: 0px 0px 5px 1px grey;
+  box-shadow: 0px 0px 5px 1px $brown;
   padding: 10px;
   width: 140px;
   height: 220;

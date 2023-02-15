@@ -45,7 +45,7 @@ function renderFavourites() {
   for (const characters of favouriteCharacters) {
     html += `<li>
         <article class ="article-fav js-articlesFav" >
-        <i class="js-bDelete fa-solid fa-xmark card__icon" id= "${characters.char_id}"> </i>
+        <i class=" js-bDelete fa-solid fa-user-minus" id= "${characters.char_id}"></i>
         <img class="img-fav" src=${characters.img}>
         <h3 class = "name-fav"> ${characters.name}</h3>
         <p class = "status-fav">${characters.status}</p>
