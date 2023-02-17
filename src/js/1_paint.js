@@ -4,9 +4,8 @@ function renderCharacters (charractersFiltered) {
   let html = "";
   let classFav = "";
   let actorsToPaint = charractersFiltered === undefined ? actors : charractersFiltered;
-   console.log(actors)
- 
-console.log(charractersFiltered)
+   
+
 
   // if (charractersFiltered !== undefined){
   //   actorsToPaint = charractersFiltered;
@@ -24,8 +23,8 @@ console.log(charractersFiltered)
     // } else {
     //   classFav = "selected";
     // }
-
-    html += `<li>
+      
+    html += `<li class= " event">
     
       <article class ="${classFav} article js-articles" id= "${characters.char_id}" >
       <img class="img" src=${characters.img} >

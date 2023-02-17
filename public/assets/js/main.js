@@ -5,6 +5,8 @@ const btn = document.querySelector(".js-button-search");
 const favourites = document.querySelector(".js-favouritesList");
 const results = document.querySelector(".js-resultsList");
 const reset = document.querySelector(".js-reset");
+const iconFav = document.querySelector(".js-fav");
+
 
 // Variables globales(Variables con datos de la app, array de objetos)
 let actors = [];
@@ -16,9 +18,8 @@ function renderCharacters (charractersFiltered) {
   let html = "";
   let classFav = "";
   let actorsToPaint = charractersFiltered === undefined ? actors : charractersFiltered;
-   console.log(actors)
- 
-console.log(charractersFiltered)
+   
+
 
   // if (charractersFiltered !== undefined){
   //   actorsToPaint = charractersFiltered;
@@ -36,8 +37,8 @@ console.log(charractersFiltered)
     // } else {
     //   classFav = "selected";
     // }
-
-    html += `<li>
+      
+    html += `<li class= " event">
     
       <article class ="${classFav} article js-articles" id= "${characters.char_id}" >
       <img class="img" src=${characters.img} >
@@ -59,27 +60,6 @@ fetch("./assets/data/characters.json")
     renderFavourites();
     renderCharacters();
   });
-
-// /   // fetch(`https://breakingbadapi.com/api/characters?name=${searchValue}`)
-//   //   .then((response) => response.json())
-//   //   .then((data) => {
-//   //     actors = data;
-//   //     renderCharacters(actors);
-//   //   });
-// // }
-
-
-// function renderFilteredCharacters (searchList) {
-//   charactersList.innerHTML = '';
-
-//   for (let i = 0; i < filteredCharacters.length; i++) { 
-//     charactersList.appendChild(renderCharacter(filteredCharacters[i]));
-//   }
-//   addListenerCharacters();
-
-// }
-
-
 
 
 
@@ -103,72 +83,6 @@ fetch("./assets/data/characters.json")
 
 
 
-
-
-
-
-
-// btn.addEventListener('click', (event) => {
-//   console.log('click')
-//   event.preventDefault();
-//   const searchValue = input.value.toLowerCase();
-//   filteredCharacters = actors.filter((actors) => actors.name.toLowerCase().includes(searchValue)
-//   );
-//   renderCharacters (filteredCharacters);
-// });
-
-
-// // Evento y función manejadora para buscar personajes.
-// //  La petición de búsqueda se ha hecho con petición al servidor. Mirar TolowerCase
-// // La petición se solicita dentro de la función porque queremos que nos busque el personaje
-// // cuando hagamos click
-
-// function handleClickSearch(ev) {
-//   console.log("he hecho click")
-//   ev.preventDefault();
-
-//   const searchValue = input.value.toLowerCase();
-//   contentResultsElement.innerHTML = '';
-  
-//   foundCharacters =  actors.filter((eachActors) =>
-//   eachActors.name.toLowerCase().includes(searchValue));
-//   renderCharacters (foundCharacters, contentResultsElement) ;
-// }
-
-// // function search() {
-// //   if (foundCharacters.length === 0) {
-// //     const noFavText = document.querySelector('.js_no_fav_text');
-// //     if (noFavText !== null) {
-// //       noFavText.remove();
-// //     }
-// //     searchErrorMessage();
-// //     renderCharacters(actors);
-// //   } else {
-// //     const errorText = document.querySelector('.js_error_text');
-// //     if (errorText !== null) {
-// //       errorText.remove();
-// //       noFavoritesMessage();
-// //     }
-// //     renderCharacters(foundCharacters);
-// //   }
-// // }
-// // function checkIfSearch() {
-// //   if (foundCharacters.length === 0) {
-// //     paintCharacterList(actors);
-// //   } else {
-// //     renderCharacters(foundCharacters);
-// //   }
-// // }
-
-//   // fetch(`https://breakingbadapi.com/api/characters?name=${searchValue}`)
-//   //   .then((response) => response.json())
-//   //   .then((data) => {
-//   //     actors = data;
-//   //     renderCharacters(actors);
-//   //   });
-// // }
-
-// btn.addEventListener("click", handleClickSearch);
 
 "use strict";
 // Seleccionar personaje favorito.
@@ -274,5 +188,15 @@ function handleReset() {
 }
 
 reset.addEventListener("click", handleReset);
+
+
+
+function handleClickFav () {
+    reset.remove("hidden");
+    iconFav.remove(`hidden`);
+    console.log("click")
+}
+results.addEventListener ("click", handleClickFav);
+
 
 //# sourceMappingURL=main.js.map
