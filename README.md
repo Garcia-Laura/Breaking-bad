@@ -4,7 +4,7 @@
 **Breaking Bad.**
 
 ¡Hola! Este es miprueba final del módulo II.
-Está compuesto por HTML, el  preprocesador SASS y React (componentes).
+Está compuesto por HTML, el  preprocesador SASS y Java Script.
 
 
 
@@ -18,30 +18,26 @@ COMENZAMOS EL PROYECTO CON LOS SIGUIENTES COMANDOS:
 ## Guía de inicio rápido
 
 > **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/).
- - Ejecutamos el comando npm install y posteriormente npm start para visualizarlo en web.
 
-1. Abre una terminal y ejecuta npm install -g create-react-app nombre-de-la-carpeta-del-proyecto.
-Para instalar create-react-app usa sudo npm install -g create-react-app. Lo tendrás que hacer una sola vez en cada ordenador.
-2. Abre VS Code en la carpeta creada.
-3. Ejecuta npm start para arrancar el proyecto en http://localhost:3000.
-4. Añade npm install node-sass para instalar SASS. 
-
-
+1. Ejecutamos npm install.
+2. Ejecutamos npm start para arrancar el proyecto en http://localhost:3000
 
 
 La **finalidad** de este proyecto consiste en:
-- Estructurar el HTML en diferentes componentes.
-- Desarrollar habilidades  y lógica de.
-- Realizar peticiones a un servidor.
+- Estructurar el HTML en diferentes partials.
+- Desarrollar habilidades  y lógica de Java Script.
 - Maquetación en SASS.
-- Uso de routes tanto estáticas commoo dinámicas
+- Realizar peticiones al servidor.
+- Elaborar un filtro para buscar personajes por nombre.
 
-Esta web consiste en un buscador de personajes de la serie Rick and Morty. 
-En dichos personajes aparecen su foto, su nombre y la especie.
-En la página web se puede encontrar dos buscadores para realizar dicha busqueda, uno se busca por nombre y otro el usuaio elige una opción entre tres. añadir que si un personaje buscado no aparece saltará un mensaje de error.
+Esta web consiste en un buscador de personajes de la serie Breaking Bad. 
+En dichos personajes aparecen su foto, su nombre y si está vivo o muerto.
+En la página web se puede encontrar un burcador para realizar una busqueda por nombre del personake. 
 
-Además se puede seleccionar un personaje y por consiguiente se te abrirá otra url mostrando el personaje seleccionado con más información sobre él.
-Destacar que si la URL está incompleta te redirigirá a otra página donde te dice que el personaje no existe y el usuario tendrá la opción de volver al inicio.
+Además se puede seleccionar un personaje y por consiguiente se selecionará como favorito. En esta sección se puede eliminar un personaje de forma individual o todos pulsando el botón reset.
+También el personaje seleccionado como favorito tiene diferente color para que sea más fácil identificar para la usuaria qué usuario es el favorito.
+
+Por último, añadir cuando se selecciona un personaje como favorito queda guardado en Local Storage.
 
 
 
