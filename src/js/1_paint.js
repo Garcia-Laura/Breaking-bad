@@ -24,7 +24,7 @@ function renderCharacters (charractersFiltered) {
     //   classFav = "selected";
     // }
       
-    html += `<li class= " event">
+    html += `<li class= "event">
     
       <article class ="${classFav} article js-articles" id= "${characters.char_id}" >
       <img class="img" src=${characters.img} >

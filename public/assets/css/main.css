@@ -142,7 +142,22 @@ body {
   align-items: center;
   gap: 7px; }
 
-.favourites,
+.favourites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px; }
+  @media (min-width: 768px) {
+    .favourites {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 15px;
+      width: 30vw; } }
+  @media (min-width: 1000px) {
+    .favourites {
+      gap: 25px; } }
+
 .result {
   display: flex;
   justify-content: center;
@@ -150,12 +165,14 @@ body {
   flex-direction: column;
   gap: 7px; }
   @media (min-width: 768px) {
-    .favourites,
     .result {
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 30px;
       margin-right: 30px; } }
+  @media (min-width: 1000px) {
+    .result {
+      gap: 35px; } }
 
 .img,
 .img-fav {

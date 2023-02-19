@@ -38,7 +38,7 @@ function renderCharacters (charractersFiltered) {
     //   classFav = "selected";
     // }
       
-    html += `<li class= " event">
+    html += `<li class= "event">
     
       <article class ="${classFav} article js-articles" id= "${characters.char_id}" >
       <img class="img" src=${characters.img} >
@@ -185,6 +185,8 @@ function handleReset() {
   renderFavourites();
   renderCharacters();
   localStorage.removeItem("favourites");
+  reset.classList.add("hidden");
+    iconFav.classList.add("hidden");
 }
 
 reset.addEventListener("click", handleReset);
@@ -192,8 +194,8 @@ reset.addEventListener("click", handleReset);
 
 
 function handleClickFav () {
-    reset.remove("hidden");
-    iconFav.remove(`hidden`);
+    reset.classList.remove("hidden");
+    iconFav.classList.remove("hidden");
     console.log("click")
 }
 results.addEventListener ("click", handleClickFav);
