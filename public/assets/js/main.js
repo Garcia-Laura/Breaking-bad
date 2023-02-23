@@ -5,7 +5,9 @@ const btn = document.querySelector(".js-button-search");
 const favourites = document.querySelector(".js-favouritesList");
 const results = document.querySelector(".js-resultsList");
 const reset = document.querySelector(".js-reset");
-const iconFav = document.querySelector(".js-fav");
+// const iconFav = document.querySelector(".js-fav");
+const containerFav = document.querySelector(".js-favourites-container")
+
 
 
 // Variables globales(Variables con datos de la app, array de objetos)
@@ -172,21 +174,24 @@ function handleIcons(ev) {
     (eachCharactersObj) =>
       eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
   );
-
   favouriteCharacters.splice(deleteFav, 1);
-
-  localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
   renderFavourites();
   renderCharacters();
+ if (favouriteCharacters.length === 0 ){
+  containerFav.classList.add("hidden");
+ 
+ } 
+ 
 }
+
 
 function handleReset() {
   favouriteCharacters = [];
   renderFavourites();
   renderCharacters();
   localStorage.removeItem("favourites");
-  reset.classList.add("hidden");
-    iconFav.classList.add("hidden");
+  containerFav.classList.add("hidden");
+    
 }
 
 reset.addEventListener("click", handleReset);
@@ -194,8 +199,8 @@ reset.addEventListener("click", handleReset);
 
 
 function handleClickFav () {
-    reset.classList.remove("hidden");
-    iconFav.classList.remove("hidden");
+    containerFav.classList.remove("hidden");
+    
     console.log("click")
 }
 results.addEventListener ("click", handleClickFav);

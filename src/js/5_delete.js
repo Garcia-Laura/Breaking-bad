@@ -14,10 +14,13 @@ function handleIcons(ev) {
     (eachCharactersObj) =>
       eachCharactersObj.char_id === parseInt(ev.currentTarget.id)
   );
-
   favouriteCharacters.splice(deleteFav, 1);
-
-  localStorage.setItem("favourites", JSON.stringify(favouriteCharacters));
   renderFavourites();
   renderCharacters();
+ if (favouriteCharacters.length === 0 ){
+  containerFav.classList.add("hidden");
+ 
+ } 
+ 
 }
+

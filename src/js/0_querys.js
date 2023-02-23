@@ -5,7 +5,9 @@ const btn = document.querySelector(".js-button-search");
 const favourites = document.querySelector(".js-favouritesList");
 const results = document.querySelector(".js-resultsList");
 const reset = document.querySelector(".js-reset");
-const iconFav = document.querySelector(".js-fav");
+// const iconFav = document.querySelector(".js-fav");
+const containerFav = document.querySelector(".js-favourites-container")
+
 
 
 // Variables globales(Variables con datos de la app, array de objetos)
